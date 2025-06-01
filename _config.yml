@@ -103,7 +103,7 @@ content:
           - DB-Cache 일관성 정책 수립, 데이터 정합성 및 신뢰성 확보
 
       - layout: left
-        title: MSA(Micro Service Architecture) | 개인 프로젝트
+        title: MSA 설계 학습 프로젝트 | 개인 프로젝트
         caption: 2025.05 ~ 2025.05
         sub_title: MSA 학습
         link: https://github.com/JaeMoonNoh/reward-event
