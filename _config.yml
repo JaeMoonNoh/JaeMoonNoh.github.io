@@ -115,7 +115,7 @@ content:
           - **5일이내** 빠른 프로토타입 개발
 
       - layout: left
-        title: Like 시스템 성능 최적화 | 개인 프로젝트
+        title: Like 시스템 성능 최적화  | 개인 프로젝트
         caption: 2025.03 ~ 2025.05
         sub_title: 백엔드 성능 병목 분석 및 아키텍처 개선
         link: https://github.com/f-lab-edu/factualpost
