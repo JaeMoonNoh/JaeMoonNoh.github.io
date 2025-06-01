@@ -54,8 +54,7 @@ about_content: | # this will include new lines to allow paragraphs
   <br>
   <br>단순히 기술을 사용하는 데 그치지 않고, 서비스의 본질적 요구와 비즈니스 목표에 맞는 최적의 아키텍처와 기술을 제안하며, CS 지식을 바탕으로 실행과 개선을 주도하는 개발자입니다.
   <br>
-  <br>현 직장에서는 <mark>프로젝트 팀장</mark>을 맡아 5인 개발팀을 리드하며 성공적으로 기술 스택 변경과 함께 프로젝트를 완수한 경험이 있습니다. 
-  <br>최적화, 구조 개선, 그리고 팀 리딩 경험을 바탕으로 앞으로도 지속적인 성장을 추구하겠습니다.
+  <br>현 직장에서는 <mark>프로젝트 팀장</mark>을 맡아 5인 개발팀을 리드하며 성공적으로 기술 스택 변경과 함께 프로젝트를 완수한 경험이 있습니다. 최적화, 구조 개선, 그리고 팀 리딩 경험을 바탕으로 앞으로도 지속적인 성장을 추구하겠습니다.
 
 content:
   - title: Experience # Title for the section
@@ -97,7 +96,7 @@ content:
         description: |
 
           - 3-Layered Architecture 적용
-          - 전체 코드를 TypeScript로 **100% 마이그레이션**
+          - TypeScript **100% 마이그레이션**
           - 한 파일당 10,000+ 라인 모놀리식 API를 **15개 도메인 중심 모듈**로 분리
           - Redis TTL 캐시 전략 도입, 조회 API 응답 속도 **84% 개선**
           - DB-Cache 일관성 정책 수립, 데이터 정합성 및 신뢰성 확보
