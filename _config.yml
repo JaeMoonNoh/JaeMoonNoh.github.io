@@ -71,6 +71,76 @@ content:
           This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
           I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+      - layout: top-middle
+        title: 충남도청 영상물 관리 시스템
+        caption: 2024.12 ~ 2025.05
+        sub_title: 백엔드 리팩토링 주도 및 아키텍처 설계 / 팀장(개발자 5인 리드)
+        description: |
+          **기술 스택**
+          - Backend: Node.js, Express, TypeScript, InversifyJS
+          - DB: MySQL
+          - Messaging / Cache: BullMQ, Redis (Cache)
+
+          **주요 성과**
+          - 레거시 JS 시스템을 TypeScript 기반으로 전면 리팩토링하여 런타임 오류 40% 감소
+          - Inversify DI/IoC 도입으로 의존성 제거 및 테스트 커버리지 확대
+          - 20개 도메인별 모듈 분리 → 유지보수성과 기능 개발 속도 70% 개선
+          - Redis + BullMQ 기반 로그 큐 시스템 구축 → 장애 상황에서도 100% 로그 영속성 보장
+          - RESTful API 전면 재설계 → 일관성과 확장성 확보
+          - 사내 세미나 24회 주관 및 코드 리뷰 프로세스 도입 → 조직 역량 강화
+
+      - layout: top-middle
+        title: 아이나래 시스템 백엔드 고도화
+        caption: 2024.06 ~ 2024.12
+        sub_title: 백엔드 아키텍처 개선 및 전체 리팩토링 주도
+        description: |
+          **기술 스택**
+          - Backend: Node.js, Express, TypeScript
+          - DB: MySQL
+          - Cache: Redis (Cache)
+
+          **주요 성과**
+          - 10,000+ 라인 모놀리식 API를 15개 도메인 중심 모듈로 분리
+          - 3-Layered Architecture 적용으로 신규 기능 개발 시간 60% 단축
+          - 전체 코드를 TypeScript로 100% 마이그레이션 → 타입 안정성 강화
+          - 콜백 기반 비동기 코드를 Async/Await로 전환 → 가독성 및 예측 가능성 향상
+          - 공통 로직 추상화 → 코드 중복 80% 제거
+          - Redis TTL 캐시 전략 도입 → 조회 API 응답 속도 84% 개선
+          - DB-Cache 일관성 정책 수립 → 데이터 정합성 및 신뢰성 확보
+
+      - layout: top-middle
+        title: 이벤트 기반 MSA 아키텍처 설계 프로젝트
+        caption: 2025.05 ~ 2025.05
+        sub_title: 아키텍처 설계 및 Redis 기반 메시징 시스템 구축
+        description: |
+          **기술 스택**
+          - Backend: Node.js, NestJS, TypeScript
+          - DB: MongoDB
+          - Messaging / Cache: Redis (Pub/Sub + Cache)
+          - DevOps: Docker, Docker Compose
+
+          **주요 성과**
+          - 도메인 기반 MSA 구조 설계 → 서비스 간 결합도 조절
+          - 이벤트 도메인에 Redis Pub/Sub 적용 → 핵심 서비스 구조적 격리
+          - Redis를 메시지 브로커로 설계 → 도메인 간 비동기 이벤트 처리 체계 확립
+          - 고트래픽 시 트래픽 분산 및 장애 격리 → 무중단 서비스 유지
+
+      - layout: top-middle
+        title: 개인 프로젝트 - Like 시스템 성능 최적화
+        caption: 2025.03 ~ 2025.05
+        sub_title: 백엔드 성능 병목 분석 및 아키텍처 개선 주도
+        description: |
+          **기술 스택**
+          - Backend: Node.js, NestJS, TypeScript
+          - DB: MySQL
+          - Messaging / Cache: BullMQ, Redis (Cache)
+          - Testing: k6
+
+          **주요 성과**
+          - RPS 700 환경에서 응답 시간 580ms → 25ms(96%), P95 988ms → 88ms(91%) 개선
+          - Like 요청 집중 시 발생한 MySQL Lock 경합 해소 및 DB 연결 고갈 해결
+          - BullMQ 기반 비동기 Queue 도입 → 요청 처리 병렬화
+          - 프로파일링 기반 병목 파악 및 최적화 → 실시간 응답 개선
 
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
