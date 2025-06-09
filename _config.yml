@@ -123,6 +123,7 @@ content:
           - RPS 700 환경에서 응답 시간 **580ms → 25ms(96%)**, **P95 988ms → 88ms(91%)** 개선
           - Like 요청 집중 시 발생한 **MySQL Lock 경합 해소** 및 **DB 연결 고갈 해결**
           - BullMQ 기반 **비동기 Queue 도입**으로 Like 요청 처리 **병목 해소**
+          - 관련 내용 : [성능 개선 정리](https://jaemoon.tistory.com/316)
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
