@@ -48,7 +48,7 @@ additional_links:
 about_profile_image: images/profile_3.jpg
 about_content: | # this will include new lines to allow paragraphs
   <mark>기술의 본질과 서비스의 목적</mark>을 항상 고민하며, 실질적인 문제 해결과 구조적 개선에 집중하는 백엔드 개발자입니다.
-  <br>레거시 시스템을 현대화해 유지보수성을 높이고, 장애 상황에서도 무손실 데이터 처리를 실현하여 로그 <mark>100% 기록</mark>을 달성함으로써 서비스 데이터 누락을 방지했습니다. 예측 불가능한 장애나 트래픽 폭주 상황을 가정한 구조 개선을 통해 서비스의 본질적 가치를 지키는 데 집중해왔습니다.
+  <br>레거시 시스템을 현대화해 유지보수성을 높이고, 장애 상황에서도 무손실 데이터 처리를 실현하여 로그 <mark>99% 기록</mark>을 달성함으로써 서비스 데이터 누락을 방지했습니다. 예측 불가능한 장애나 트래픽 폭주 상황을 가정한 구조 개선을 통해 서비스의 본질적 가치를 지키는 데 집중해왔습니다.
   <br>
   <br>현재는 API 최적화와 구조 개선에 깊은 관심을 가지고 있습니다. Redis 기반 캐시와 비동기 큐(BullMQ) 등 다양한 기술을 적용해 API 응답 속도를 <marK>최대 96%</mark>까지 개선한 경험이 있으며, 데이터베이스 병목은 쿼리 최적화, 인덱스 설계, 락 경합 해소 등 CS 지식을 바탕으로 해결해 시스템의 신뢰성을 높였습니다.
   <br>
@@ -84,7 +84,8 @@ content:
         description: |
 
           - Inversify DI/IoC 도입으로 의존성 제거, 유지보수성과 기능 개발 속도 **70% 개선**
-          - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **100% 로그 영속성 보장**
+          - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **99% 로그 영속성 보장**
+            - [BullMQ 기반 로그 큐 시스템 도입기](https://jaemoon.tistory.com/364)
           - RESTful API 전면 재설계 일관성과 확장성 확보
           - **사내 세미나 24회** 주관 및 코드 리뷰 프로세스 도입으로 **조직 역량 강화**
 
@@ -123,7 +124,7 @@ content:
           - RPS 700 환경에서 응답 시간 **580ms → 25ms(96%)**, **P95 988ms → 88ms(91%)** 개선
           - Like 요청 집중 시 발생한 **MySQL Lock 경합 해소** 및 **DB 연결 고갈 해결**
           - BullMQ 기반 **비동기 Queue 도입**으로 Like 요청 처리 **병목 해소**
-          - [async queue 도입기](https://jaemoon.tistory.com/363)
+          - [BullMQ 도입기](https://jaemoon.tistory.com/363)
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
