@@ -45,7 +45,7 @@ additional_links:
 
 # About Section
 # about_title: About Me
-about_profile_image: images/profile_3.jpg
+about_profile_image: images/landscape-trees.jpg
 about_content: | # this will include new lines to allow paragraphs
   <mark>기술의 본질과 서비스의 목적</mark>을 항상 고민하며, 실질적인 문제 해결과 구조적 개선에 집중하는 백엔드 개발자입니다.
   <br>레거시 시스템을 현대화해 유지보수성을 높이고, 장애 상황에서도 무손실 데이터 처리를 실현하여 로그 <mark>99% 기록</mark>을 달성함으로써 서비스 데이터 누락을 방지했습니다. 예측 불가능한 장애나 트래픽 폭주 상황을 가정한 구조 개선을 통해 서비스의 본질적 가치를 지키는 데 집중해왔습니다.
