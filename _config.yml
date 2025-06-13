@@ -82,7 +82,7 @@ content:
         description: |
 
           - Inversify DI/IoC 도입으로 의존성 제거, 유지보수성과 기능 개발 속도 **70% 개선**
-          - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **99% 로그 영속성 보장**
+          - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **99.9% 로그 영속성 보장**
           - RESTful API 전면 재설계 일관성과 확장성 확보
           - **사내 세미나 24회** 주관 및 코드 리뷰 프로세스 도입으로 **조직 역량 강화**
           - [BullMQ 기반 로그 큐 시스템 도입기](https://jaemoon.tistory.com/364)
