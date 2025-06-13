@@ -100,8 +100,11 @@ content:
           - Redis TTL 캐시 전략 도입, 조회 API 응답 속도 **84% 개선**
           - DB-Cache 일관성 정책 수립, 데이터 정합성 및 신뢰성 확보
 
+  - title: Personal Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
       - layout: left
-        title: MSA 설계 학습 프로젝트 | 개인 프로젝트
+        title: MSA 설계 학습 프로젝트
         caption: 2025.05 ~ 2025.05
         sub_title: MSA 학습
         link: https://github.com/JaeMoonNoh/reward-event
@@ -113,7 +116,7 @@ content:
           - **5일이내** 빠른 프로토타입 개발
 
       - layout: left
-        title: Like 시스템 성능 최적화&nbsp; | 개인 프로젝트
+        title: Like 성능 최적화
         caption: 2025.03 ~ 2025.05
         sub_title: 백엔드 성능 병목 분석 및 아키텍처 개선
         link: https://github.com/f-lab-edu/factualpost
