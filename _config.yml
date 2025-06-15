@@ -65,7 +65,7 @@ content:
         sub_title: 백엔드 개발자 | 팀장
         caption: 09.2022 - Present
         description: | # this will include new lines to allow paragraphs
-          - Node.js, Express, Inversify, TypeScript를 활용한 백엔드 개발
+          - Node.js, Express, Inversify, Nest, TypeScript를 활용한 백엔드 개발
           - RESTful API 설계 및 구현
           - Redis Cache 전략으로 API 응답 속도 **최대 84% 개선**
           - BullMQ를 이용한 비동기 작업 처리 및 [**99.9% 로그 저장 큐 시스템 구현**](https://jaemoon.tistory.com/364)
@@ -81,6 +81,7 @@ content:
         link: https://jaemoon.tistory.com/316
         description: |
 
+          - Nest 마이그레이션 진행중
           - Inversify DI/IoC 도입으로 의존성 제거, 유지보수성과 기능 개발 속도 **70% 개선**
           - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **99.9% 로그 영속성 보장**
           - RESTful API 전면 재설계 일관성과 확장성 확보
