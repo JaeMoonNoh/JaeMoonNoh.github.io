@@ -226,7 +226,7 @@ content:
           - Purge Thread 병목 → Undo Log 폭증
           - Buffer Pool 적중률 저하 → 디스크 I/O 증가
 
-          ### 구조적 개선 방향
+          **구조적 개선 방향**
 
           1. **Secondary Index 최소화**
               - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
@@ -247,7 +247,7 @@ content:
               - 자주 조회되는 컬럼 조합 기반의 Index 설계
               - Buffer Pool 적중률 향상 및 Disk I/O 감소
 
-          ### 개선 효과 및 인사이트
+          **개선 효과 및 인사이트**
 
           - Change Buffer가 다시 활성화되며 디스크 쓰기 병목 제거
           - Purge Thread 지연 해소 및 Undo Log 안정화
