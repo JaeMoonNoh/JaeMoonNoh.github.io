@@ -229,29 +229,29 @@ content:
           - 페이지네이션 SELECT 시 지연 및 처리 불균형
           - Purge Thread 병목 → Undo Log 폭증
           - Buffer Pool 적중률 저하 → 디스크 I/O 증가
+          
+          <br>**구조적 개선 방향**
+          
+          <br>**Secondary Index 최소화**
+            - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
+            - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
+
+          <br>**FK 제거 → Change Buffer 활성화**
+            - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
+            - 디스크 쓰기 증가 및 Purge Thread 병목
+            - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
+
+          <br>**반정규화 전략**
+            - JOIN을 대체해 조회 성능 개선
+            - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
+            - 값 변경 발생 시 Bulk Update 처리 전략 적용
+
+          <br>**Covering Index 도입**
+            - Double Lookup 제거: Secondary Index → PK 탐색 제거
+            - 자주 조회되는 컬럼 조합 기반의 Index 설계
+            - Buffer Pool 적중률 향상 및 Disk I/O 감소
           <br>
-          **구조적 개선 방향**
-
-            **Secondary Index 최소화**
-              - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
-              - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
-
-            **FK 제거 → Change Buffer 활성화**
-              - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
-              - 디스크 쓰기 증가 및 Purge Thread 병목
-              - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
-
-            **반정규화 전략**
-              - JOIN을 대체해 조회 성능 개선
-              - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
-              - 값 변경 발생 시 Bulk Update 처리 전략 적용
-
-            **Covering Index 도입**
-              - Double Lookup 제거: Secondary Index → PK 탐색 제거
-              - 자주 조회되는 컬럼 조합 기반의 Index 설계
-              - Buffer Pool 적중률 향상 및 Disk I/O 감소
-          <br>
-          **개선 효과 및 인사이트**
+          <br>**개선 효과 및 인사이트**
 
           - Change Buffer가 비동기 처리되며 디스크 쓰기 병목 제거
           - Purge Thread 지연 해소 및 Undo Log 안정화
