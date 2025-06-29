@@ -190,6 +190,8 @@ content:
 
           실제 운영 환경에서도 Redis 일시 장애나 예상치 못한 부하 상황을 견디며, **신뢰성 높은 로그 수집이 완전하게 이뤄짐을 검증**했습니다. 단순한 도구 사용이 아닌 Redis 제약을 구조적으로 해석하고 대응한 실전 경험이며, 보안 로그 유실이라는 리스크를 **아키텍처 수준에서 제거**한 사례입니다.
 
+          ━━━━━━━━━━━━━━━━━━━━━━━━
+
       - layout: left
         title: 비동기 아키텍처 전환
         caption: 2025.05
@@ -210,7 +212,9 @@ content:
           - Retry, Backoff 적용으로 장애 상황 재처리 보장
           - CAP 이론 기반 Eventual Consistency 채택
 
-          단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.
+          단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.\
+
+          ━━━━━━━━━━━━━━━━━━━━━━━━
 
       - layout: left
         title: InnoDB 성능 최적화 및 구조 개선
@@ -228,21 +232,21 @@ content:
 
           **구조적 개선 방향**
 
-          1. **Secondary Index 최소화**
+          **Secondary Index 최소화**
               - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
               - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
 
-          2. **FK 제거 → Change Buffer 활성화**
+          **FK 제거 → Change Buffer 활성화**
               - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 미작동
               - 디스크 쓰기 증가 및 Purge Thread 병목
               - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
 
-          3. **반정규화 전략**
+          **반정규화 전략**
               - JOIN을 대체해 조회 성능 개선
               - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
               - 값 변경 발생 시 Bulk Update 처리 전략 적용
 
-          4. **Covering Index 도입**
+          **Covering Index 도입**
               - Double Lookup 제거: Secondary Index → PK 탐색 제거
               - 자주 조회되는 컬럼 조합 기반의 Index 설계
               - Buffer Pool 적중률 향상 및 Disk I/O 감소
