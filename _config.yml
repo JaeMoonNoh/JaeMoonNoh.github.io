@@ -195,71 +195,71 @@ content:
 
           실제 운영 환경에서도 Redis 일시 장애나 예상치 못한 부하 상황을 견디며, **신뢰성 높은 로그 수집이 완전하게 이뤄짐을 검증**했습니다. 단순한 도구 사용이 아닌 Redis 제약을 구조적으로 해석하고 대응한 실전 경험이며, 보안 로그 유실이라는 리스크를 **아키텍처 수준에서 제거**한 사례입니다.
 
-      - layout: left
-        title: 비동기 아키텍처 전환
-        caption: 2025.05
-        sub_title: BullMQ 기반 큐 시스템 도입 및 MySQL Connection 병목 해소
-        description: |
-          BullMQ 기반 비동기 아키텍처로 전환해 평균 응답속도를 **580ms → 25ms (▲96%)**까지 개선하고, **TPS 700 이상** 환경에서도 **Connection 고갈 없이 안정화**된 서비스를 구현했습니다.
+      # - layout: left
+      #   title: 비동기 아키텍처 전환
+      #   caption: 2025.05
+      #   sub_title: BullMQ 기반 큐 시스템 도입 및 MySQL Connection 병목 해소
+      #   description: |
+      #     BullMQ 기반 비동기 아키텍처로 전환해 평균 응답속도를 **580ms → 25ms (▲96%)**까지 개선하고, **TPS 700 이상** 환경에서도 **Connection 고갈 없이 안정화**된 서비스를 구현했습니다.
 
-          기존 동기 구조는 사용자 요청마다 DB에 직접 접근해 좋아요 상태를 처리했으며, 이로 인해 TPS 700 이상의 부하에서는 row-level lock 경합 및 Connection Pool 고갈 문제가 반복적으로 발생했습니다. 단순히 connection 수를 증가시키는 방식은 Context Switching 비용만 증가시켜 본질적인 해결책이 될 수 없었습니다.
+      #     기존 동기 구조는 사용자 요청마다 DB에 직접 접근해 좋아요 상태를 처리했으며, 이로 인해 TPS 700 이상의 부하에서는 row-level lock 경합 및 Connection Pool 고갈 문제가 반복적으로 발생했습니다. 단순히 connection 수를 증가시키는 방식은 Context Switching 비용만 증가시켜 본질적인 해결책이 될 수 없었습니다.
 
-          구조적 개선 과정:
-          - Redis INCR/DECR → Bulk insert로 Write 집중 해소
-          - KEYS → SET 자료구조 및 Pipeline 도입
-          - MySQL Full Scan → Index Scan 전환 (응답 시간 **42ms**까지 단축)
+      #     구조적 개선 과정:
+      #     - Redis INCR/DECR → Bulk insert로 Write 집중 해소
+      #     - KEYS → SET 자료구조 및 Pipeline 도입
+      #     - MySQL Full Scan → Index Scan 전환 (응답 시간 **42ms**까지 단축)
 
-          최종 전환 아키텍처:
-          - Redis + BullMQ 기반 큐 구조
-          - Node.js Worker로 DB 접근 제어 및 Lock 해소
-          - Retry, Backoff 적용으로 장애 상황 재처리 보장
-          - CAP 이론 기반 Eventual Consistency 채택
+      #     최종 전환 아키텍처:
+      #     - Redis + BullMQ 기반 큐 구조
+      #     - Node.js Worker로 DB 접근 제어 및 Lock 해소
+      #     - Retry, Backoff 적용으로 장애 상황 재처리 보장
+      #     - CAP 이론 기반 Eventual Consistency 채택
 
-          단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.\
+      #     단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.\
 
-      - layout: left
-        title: InnoDB 성능 최적화 및 구조 개선
-        caption: 2025.05
-        sub_title: 1억 건 데이터 대상의 INSERT/SELECT 병목 해소 및 인덱스 구조 재설계
-        description: |
-          InnoDB의 내부 메커니즘을 깊이 이해하고, 이를 기반으로 테이블과 인덱스를 재설계함으로써 **1억 건 이상의 데이터 처리 환경에서도 안정적인 성능**을 확보했습니다.
+      # - layout: left
+      #   title: InnoDB 성능 최적화 및 구조 개선
+      #   caption: 2025.05
+      #   sub_title: 1억 건 데이터 대상의 INSERT/SELECT 병목 해소 및 인덱스 구조 재설계
+      #   description: |
+      #     InnoDB의 내부 메커니즘을 깊이 이해하고, 이를 기반으로 테이블과 인덱스를 재설계함으로써 **1억 건 이상의 데이터 처리 환경에서도 안정적인 성능**을 확보했습니다.
 
-          실제 운영 환경에서 다음과 같은 병목 현상이 동시에 발생했습니다:
+      #     실제 운영 환경에서 다음과 같은 병목 현상이 동시에 발생했습니다:
 
-          - INSERT 작업 중 Timeout
-          - 페이지네이션 SELECT 시 지연 및 처리 불균형
-          - Purge Thread 병목 → Undo Log 폭증
-          - Buffer Pool 적중률 저하 → 디스크 I/O 증가
+      #     - INSERT 작업 중 Timeout
+      #     - 페이지네이션 SELECT 시 지연 및 처리 불균형
+      #     - Purge Thread 병목 → Undo Log 폭증
+      #     - Buffer Pool 적중률 저하 → 디스크 I/O 증가
 
-          **구조적 개선 방향**
+      #     **구조적 개선 방향**
 
-          **Secondary Index 최소화**
-              - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
-              - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
+      #     **Secondary Index 최소화**
+      #         - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
+      #         - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
 
-          **FK 제거 → Change Buffer 활성화**
-              - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
-              - 디스크 쓰기 증가 및 Purge Thread 병목
-              - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
+      #     **FK 제거 → Change Buffer 활성화**
+      #         - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
+      #         - 디스크 쓰기 증가 및 Purge Thread 병목
+      #         - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
 
-          **반정규화 전략**
-              - JOIN을 대체해 조회 성능 개선
-              - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
-              - 값 변경 발생 시 Bulk Update 처리 전략 적용
+      #     **반정규화 전략**
+      #         - JOIN을 대체해 조회 성능 개선
+      #         - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
+      #         - 값 변경 발생 시 Bulk Update 처리 전략 적용
 
-          **Covering Index 도입**
-              - Double Lookup 제거: Secondary Index → PK 탐색 제거
-              - 자주 조회되는 컬럼 조합 기반의 Index 설계
-              - Buffer Pool 적중률 향상 및 Disk I/O 감소
+      #     **Covering Index 도입**
+      #         - Double Lookup 제거: Secondary Index → PK 탐색 제거
+      #         - 자주 조회되는 컬럼 조합 기반의 Index 설계
+      #         - Buffer Pool 적중률 향상 및 Disk I/O 감소
 
-          **개선 효과 및 인사이트**
+      #     **개선 효과 및 인사이트**
 
-          - Change Buffer가 비동기 처리되며 디스크 쓰기 병목 제거
-          - Purge Thread 지연 해소 및 Undo Log 안정화
-          - Insert/Select 작업 모두에서 성능 개선 확인
-          - 단순한 튜닝을 넘어서, InnoDB의 Redo/Undo/Change Buffer, FK 무결성 검사, Buffer Pool 메커니즘까지 고려한 **아키텍처적 개선 경험**
+      #     - Change Buffer가 비동기 처리되며 디스크 쓰기 병목 제거
+      #     - Purge Thread 지연 해소 및 Undo Log 안정화
+      #     - Insert/Select 작업 모두에서 성능 개선 확인
+      #     - 단순한 튜닝을 넘어서, InnoDB의 Redo/Undo/Change Buffer, FK 무결성 검사, Buffer Pool 메커니즘까지 고려한 **아키텍처적 개선 경험**
 
-          이 경험을 통해 **성능 문제는 단일 포인트가 아닌 InnoDB 내부 구조의 상호작용**에 의해 발생한다는 점을 체감했습니다. 따라서 고성능을 위한 설계는 단일 요소 튜닝이 아닌, **전체 구조와 메커니즘을 통합적으로 고려하는 설계 전략**이 필수적임을 학습했습니다.
+      #     이 경험을 통해 **성능 문제는 단일 포인트가 아닌 InnoDB 내부 구조의 상호작용**에 의해 발생한다는 점을 체감했습니다. 따라서 고성능을 위한 설계는 단일 요소 튜닝이 아닌, **전체 구조와 메커니즘을 통합적으로 고려하는 설계 전략**이 필수적임을 학습했습니다.
 
 
       
