@@ -178,7 +178,7 @@ content:
           - Retry, Backoff 적용으로 장애 상황 재처리 보장
           - CAP 이론 기반 Eventual Consistency 채택
 
-          단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.\
+          단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.
 
   - title: BullMQ 기반 고신뢰 로그 수집 시스템 설계 및 운영
     layout: list
@@ -232,25 +232,25 @@ content:
           
           <br>**구조적 개선 방향**
           
-          <br>**Secondary Index 최소화**
+          <br>**1. Secondary Index 최소화**
             - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
             - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
 
-          <br>**FK 제거 → Change Buffer 활성화**
+          <br>**2. FK 제거 → Change Buffer 활성화**
             - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
             - 디스크 쓰기 증가 및 Purge Thread 병목
             - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
 
-          <br>**반정규화 전략**
+          <br>**3. 반정규화 전략**
             - JOIN을 대체해 조회 성능 개선
             - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
             - 값 변경 발생 시 Bulk Update 처리 전략 적용
 
-          <br>**Covering Index 도입**
+          <br>**4. Covering Index 도입**
             - Double Lookup 제거: Secondary Index → PK 탐색 제거
             - 자주 조회되는 컬럼 조합 기반의 Index 설계
             - Buffer Pool 적중률 향상 및 Disk I/O 감소
-          <br>
+          
           <br>**개선 효과 및 인사이트**
 
           - Change Buffer가 비동기 처리되며 디스크 쓰기 병목 제거
