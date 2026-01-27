@@ -59,11 +59,23 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: Deratio
+        link: https://www.deratio.io/
+        # link_text: boringcompany.com
+        sub_title: 
+        caption: 07.2025 - present
+        description: | # this will include new lines to allow paragraphs
+          - 리워드 시스템 개발
+          - 쿼리 최적화
+          - [**ACU(Aurora Capacity Unit) 24에서 4로 약 84% 감소**](https://jaemoon.tistory.com/383)
+          - [**팀 리딩** 및 프로젝트 관리](https://jaemoon.tistory.com/316)
+
+      - layout: left
         title: Codeline
         link: http://codeline.kr/
         # link_text: boringcompany.com
         sub_title: 백엔드 개발자
-        caption: 09.2022 - Present
+        caption: 09.2022 - 07.2025
         description: | # this will include new lines to allow paragraphs
           - TypeScript, Nest, Node.js, Express, MySQL을 활용한 백엔드 개발
           - RESTful API 설계 및 구현
@@ -141,7 +153,8 @@ content:
           # 상담 양식을 통해 들어온 고객의 문의를 처리하는 시스템을 개발하고 있습니다.
         description: | # this will include new lines to allow paragraphs
           - Node.js, Express, NestJS, TypeScript
-          - TypeORM, MySQL
+          - AWS, Docker, grafana, Datadog
+          - TypeORM, Prisma, MySQL, Postgres
           - Redis(BullMQ, Pub/Sub, Cache, Pipeline)
           - Testing(k6, Jest)
       - layout: left
