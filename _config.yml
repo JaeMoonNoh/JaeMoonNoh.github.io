@@ -62,7 +62,7 @@ content:
         title: Deratio
         link: https://www.deratio.io/
         # link_text: boringcompany.com
-        sub_title: 
+        sub_title: backend engineer
         caption: 07.2025 - present
         description: | # this will include new lines to allow paragraphs
           - 리워드 시스템 개발
@@ -73,7 +73,7 @@ content:
         title: Codeline
         link: http://codeline.kr/
         # link_text: boringcompany.com
-        sub_title: 백엔드 개발자
+        sub_title: backend engineer
         caption: 09.2022 - 07.2025
         description: | # this will include new lines to allow paragraphs
           - TypeScript, Nest, Node.js, Express, MySQL을 활용한 백엔드 개발
