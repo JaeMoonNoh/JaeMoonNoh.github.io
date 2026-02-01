@@ -66,8 +66,11 @@ content:
         caption: 07.2025 - present
         description: | # this will include new lines to allow paragraphs
           - 리워드 시스템 개발
-          - 쿼리 최적화
           - [**ACU(Aurora Capacity Unit) 24에서 4로 약 84% 감소**](https://jaemoon.tistory.com/383)
+          - [**EKS 환경 Socket Server Architecture 설계**](https://jaemoon.tistory.com/384)
+            - **Kernel Tuning**: OS의 FD(File Descriptor) 한계를 분석하여 ulimit 최적화 및 동시 접속 수용량 극대화
+            - **Network Optimization**: DNS Lookup/Handshake 비용 제거를 위해 HTTP Keep-Alive 및 Connection Reuse 전략 도입
+            - **Reliability**: Socket 서버 특성(Memory-bound)을 반영한 Custom Metric HPA 설계로 OOM 방지 및 Graceful Shutdown 구현
 
       - layout: left
         title: Codeline
