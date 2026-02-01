@@ -45,14 +45,26 @@ additional_links:
 # 그 결과, 로그 <mark>99.9% 기록</mark>이라는 성과를 통해 서비스 데이터 누락을 방지할 수 있었습니다. <mark>'총대맨 개발자'</mark>이자,
 # About Section
 # about_title: About Me
+
+# - **Kernel Tuning**: OS의 FD(File Descriptor) 한계를 분석하여 ulimit 최적화 및 동시 접속 수용량 극대화
+# - **Network Optimization**: DNS Lookup/Handshake 비용 제거를 위해 HTTP Keep-Alive 및 Connection Reuse 전략 도입
+# - **Reliability**: Socket 서버 특성(Memory-bound)을 반영한 Custom Metric HPA 설계로 OOM 방지 및 Graceful Shutdown 구현
+
 about_profile_image: images/landscape-trees.jpg
-about_content: | # this will include new lines to allow paragraphs
-  8년간 누구도 시도하지 않았던 기술 스택 전환을 직접 주도한 팀의 <mark>'포인트맨'</mark>입니다. 
-  <br>당연한 일상이었던 레거시 코드 베이스를 문제로 재정의해 모던 기술 스택으로 전환시켰습니다. 변화가 필요하다면 누구보다 먼저 움직이고, 팀이 믿고 따라올 수 있는 방향을 제시하는 개발자입니다.
+# about_content: | # this will include new lines to allow paragraphs
+#   8년간 누구도 시도하지 않았던 기술 스택 전환을 직접 주도한 팀의 <mark>'포인트맨'</mark>입니다. 
+#   <br>당연한 일상이었던 레거시 코드 베이스를 문제로 재정의해 모던 기술 스택으로 전환시켰습니다. 변화가 필요하다면 누구보다 먼저 움직이고, 팀이 믿고 따라올 수 있는 방향을 제시하는 개발자입니다.
+#   <br>
+#   <br>현재는 API 최적화와 구조 개선에 깊은 관심을 가지고 있습니다. 개인 프로젝트에서 얻은 인사이트를 실무에 적극적으로 적용해 <mark>Redis</mark>와 <mark>BullMQ</mark>를 바탕으로 장애 상황에서도 무손실 데이터 처리를 실현했습니다. 이처럼 예측 불가능한 장애나 트래픽 폭주 상황을 가정해 구조를 개선함으로써, 서비스의 본질적 가치를 지키는 데 집중하고 있습니다.
+#   <br>
+#   <br><mark>"모든 문제에 Silver Bullet은 없지만 반드시 해결 방법은 존재한다”</mark>는 신념을 갖고 있습니다. 특정 기술이나 방식에 집착하지 않고, 더 나은 결과는 언제나 존재한다는 배고픔으로 상황과 문제의 본질에 맞는 최적의 도구와 방법을 적극적으로 탐색하고 적용합니다. 불이 필요하면 부싯돌을, 물이 필요하면 우물을 파듯, 문제마다 가장 효과적인 해결 방법을 찾는 데 집중할 것 입니다.
+
+about_content: |
+  누구도 시도하지 않았던 <mark>기술 스택 전환을 주도하며 레거시 시스템을 전환</mark>한 경험이 있습니다. 변화가 필요한 순간 가장 먼저 움직이고, 동료들이 믿고 따를 수 있는 근거 있는 방향을 제시하는 개발자입니다.
   <br>
-  <br>현재는 API 최적화와 구조 개선에 깊은 관심을 가지고 있습니다. 개인 프로젝트에서 얻은 인사이트를 실무에 적극적으로 적용해 <mark>Redis</mark>와 <mark>BullMQ</mark>를 바탕으로 장애 상황에서도 무손실 데이터 처리를 실현했습니다. 이처럼 예측 불가능한 장애나 트래픽 폭주 상황을 가정해 구조를 개선함으로써, 서비스의 본질적 가치를 지키는 데 집중하고 있습니다.
+  <br>단순한 백엔드 개발을 넘어, **인프라와 OS를 아우르는 아키텍처 설계**로 관심사를 확장했습니다. 최근 <mark>EKS 기반 소켓 서버 설계</mark>를 통해 동시 접속 성능을 극한으로 끌어올리고, 동시에 RDB의 **ACU 비용을 84% 절감**하는 등 비즈니스 임팩트를 만들어냈습니다. 예측 불가능한 트래픽과 장애 상황에서도 서비스의 본질적 가치가 훼손되지 않도록 견고한 구조를 만드는 데 주력하고 있습니다.
   <br>
-  <br><mark>"모든 문제에 Silver Bullet은 없지만 반드시 해결 방법은 존재한다”</mark>는 신념을 갖고 있습니다. 특정 기술이나 방식에 집착하지 않고, 더 나은 결과는 언제나 존재한다는 배고픔으로 상황과 문제의 본질에 맞는 최적의 도구와 방법을 적극적으로 탐색하고 적용합니다. 불이 필요하면 부싯돌을, 물이 필요하면 우물을 파듯, 문제마다 가장 효과적인 해결 방법을 찾는 데 집중할 것 입니다.
+  <br>저에게 기술은 문제를 해결하는 도구입니다. <mark>"해결 못 할 문제는 없다"</mark>는 배고픔으로, 상황에 맞는 최적의 도구와 방법을 집요하게 탐색합니다. 언제나 더 나은 결과가 존재한다는 믿음으로, 팀과 서비스의 성장을 위한 '포인트맨'이 되겠습니다.
 
 content:
   - title: Experience # Title for the section
@@ -68,9 +80,6 @@ content:
           - 리워드 시스템 개발
           - [**ACU(Aurora Capacity Unit) 24에서 4로 약 84% 감소**](https://jaemoon.tistory.com/383)
           - [**EKS 환경 Socket Server Architecture 설계**](https://jaemoon.tistory.com/384)
-            - **Kernel Tuning**: OS의 FD(File Descriptor) 한계를 분석하여 ulimit 최적화 및 동시 접속 수용량 극대화
-            - **Network Optimization**: DNS Lookup/Handshake 비용 제거를 위해 HTTP Keep-Alive 및 Connection Reuse 전략 도입
-            - **Reliability**: Socket 서버 특성(Memory-bound)을 반영한 Custom Metric HPA 설계로 OOM 방지 및 Graceful Shutdown 구현
 
       - layout: left
         title: Codeline
@@ -147,12 +156,6 @@ content:
     content:
       - layout: left
         title: Backend
-        # link: http://codeline.kr/
-        # link_text: boringcompany.com
-        # sub_title: 백엔드 개발자 | 팀장
-        # caption: 09.2022 - Present
-        #quote: >
-          # 상담 양식을 통해 들어온 고객의 문의를 처리하는 시스템을 개발하고 있습니다.
         description: | # this will include new lines to allow paragraphs
           - Node.js, Express, NestJS, TypeScript
           - AWS, Docker, grafana, Datadog
@@ -161,133 +164,8 @@ content:
           - Testing(k6, Jest)
       - layout: left
         title: Frontend
-        # link: http://codeline.kr/
-        # link_text: boringcompany.com
-        # sub_title: 백엔드 개발자 | 팀장
-        # caption: 09.2022 - Present
-        #quote: >
-          # 상담 양식을 통해 들어온 고객의 문의를 처리하는 시스템을 개발하고 있습니다.
         description: | # this will include new lines to allow paragraphs
           - jQuery, HTML, CSS
-
-  # - title: BullMQ 기반 큐 시스템 도입 및 MySQL Connection 병목 해소
-  #   layout: list
-  #   content:
-
-  #     - layout: left
-  #       title: 비동기 아키텍처 전환
-  #       caption: 2025.05
-  #       description: |
-  #         BullMQ 기반 비동기 아키텍처로 전환해 평균 응답속도를 **580ms → 25ms (▲96%)**까지 개선하고, **TPS 700 이상** 환경에서도 **Connection 고갈 없이 안정화**된 서비스를 구현했습니다.
-
-  #         기존 동기 구조는 사용자 요청마다 DB에 직접 접근해 좋아요 상태를 처리했으며, 이로 인해 TPS 700 이상의 부하에서는 row-level lock 경합 및 Connection Pool 고갈 문제가 반복적으로 발생했습니다. 단순히 connection 수를 증가시키는 방식은 Context Switching 비용만 증가시켜 본질적인 해결책이 될 수 없었습니다.
-
-  #         구조적 개선 과정:
-  #         - Redis INCR/DECR → Bulk insert로 Write 집중 해소
-  #         - KEYS → SET 자료구조 및 Pipeline 도입
-  #         - MySQL Full Scan → Index Scan 전환 (응답 시간 **42ms**까지 단축)
-
-  #         최종 전환 아키텍처:
-  #         - Redis + BullMQ 기반 큐 구조
-  #         - Node.js Worker로 DB 접근 제어 및 Lock 해소
-  #         - Retry, Backoff 적용으로 장애 상황 재처리 보장
-  #         - CAP 이론 기반 Eventual Consistency 채택
-
-  #         단순 튜닝을 넘은 구조적 접근으로 시스템 병목을 해결하고, 설계적 시야로 문제를 해결한 경험이었습니다.
-
-  # - title: BullMQ 기반 고신뢰 로그 수집 시스템 설계 및 운영
-  #   layout: list
-  #   content:
-
-  #     - layout: left
-  #       title: 신뢰성 중심 로그 수집 아키텍처 구현
-  #       caption: 2025.05
-  #       description: |
-  #         실시간 트래픽 증가나 장애 상황에서도 **사실상 로그 유실 없는 수준의 고신뢰 수집 시스템**을 구현했습니다. BullMQ 기반 비동기 구조를 통해 단순한 비동기 처리를 넘어서 Redis 장애 복구까지 고려한 구조를 직접 설계하고, 구조적 리스크를 사전에 제어할 수 있는 운영 수준의 시스템을 구축했습니다.
-  #         기존 구조는 보안 로그를 API 서버에서 직접 DB에 저장하는 방식이었으며, 트래픽 급증 시 다음과 같은 병목이 발생했습니다.
-
-  #         - DB Connection Pool 고갈
-  #         - DML Lock 경합
-  #         - SPOF 구조로 인한 장애 전파
-  #         - 로그 유실 발생 가능성
-
-  #         특히 로그는 보안 사고의 핵심 단서로 활용되기 때문에, 유실은 성능 문제가 아니라 **서비스 신뢰성과 복원력의 문제**였습니다.
-  #         개선된 구조는 다음과 같습니다.
-
-  #         - BullMQ 기반 Message Queue 아키텍처 도입
-  #         - API 서버 → Redis에 로그 적재 → Worker가 순차 저장
-  #         - 고부하 상황에서도 **사실상 로그 유실 없는 수준의 안정성 확보**
-  #         - DB와의 강결합 해소로 응답 지연 및 장애 전파 제거
-
-  #         Redis 운용에 있어 고가용성과 복원력을 위한 조치도 포함했습니다.
-
-  #         - TTL, AOF 설정, Eviction Policy 최적화를 통한 **OOM 방지 및 데이터 영속성 확보**
-  #         - 장애 발생 시에도 로그 복원 가능한 구조
-  #         - Redis Sentinel 및 Cluster 구성까지 고려해 **HA(High Availability) 기반의 운영 안정성 확보**
-
-  #         실제 운영 환경에서도 Redis 일시 장애나 예상치 못한 부하 상황을 견디며, **신뢰성 높은 로그 수집이 완전하게 이뤄짐을 검증**했습니다. 단순한 도구 사용이 아닌 Redis 제약을 구조적으로 해석하고 대응한 실전 경험이며, 보안 로그 유실이라는 리스크를 **아키텍처 수준에서 제거**한 사례입니다.
-
-
-  # - title: 1억 건 데이터 대상의 INSERT/SELECT 병목 해소 및 인덱스 구조 재설계
-  #   layout: list
-  #   content:
-
-  #     - layout: left
-  #       title: InnoDB 성능 최적화 및 구조 개선
-  #       caption: 2025.05
-  #       description: |
-  #         InnoDB의 내부 메커니즘을 깊이 이해하고, 이를 기반으로 테이블과 인덱스를 재설계함으로써 **1억 건 이상의 데이터 처리 환경에서도 안정적인 성능**을 확보했습니다.
-  #         실제 운영 환경에서 다음과 같은 병목 현상이 동시에 발생했습니다.
-          
-  #         - INSERT 작업 중 Timeout
-  #         - 페이지네이션 SELECT 시 지연 및 처리 불균형
-  #         - Purge Thread 병목 → Undo Log 폭증
-  #         - Buffer Pool 적중률 저하 → 디스크 I/O 증가
-          
-  #         <br>**구조적 개선 방향**
-          
-  #         <br>**1. Secondary Index 최소화**
-  #           - INSERT 시 모든 인덱스에 Redo/Undo Log 기록이 발생
-  #           - 사용되지 않는 보조 인덱스를 제거해 I/O 및 Purge 부담 완화
-
-  #         <br>**2. FK 제거 → Change Buffer 활성화**
-  #           - FK가 존재하면 보조 인덱스 변경 시 Change Buffer 동기적 실행
-  #           - 디스크 쓰기 증가 및 Purge Thread 병목
-  #           - FK 제거 후 애플리케이션 레벨에서 무결성 관리로 전환
-
-  #         <br>**3. 반정규화 전략**
-  #           - JOIN을 대체해 조회 성능 개선
-  #           - 변경 빈도 낮은 컬럼은 테이블 내 중복 허용
-  #           - 값 변경 발생 시 Bulk Update 처리 전략 적용
-
-  #         <br>**4. Covering Index 도입**
-  #           - Double Lookup 제거: Secondary Index → PK 탐색 제거
-  #           - 자주 조회되는 컬럼 조합 기반의 Index 설계
-  #           - Buffer Pool 적중률 향상 및 Disk I/O 감소
-          
-  #         <br>**개선 효과 및 인사이트**
-
-  #         - Change Buffer가 비동기 처리되며 디스크 쓰기 병목 제거
-  #         - Purge Thread 지연 해소 및 Undo Log 안정화
-  #         - Insert/Select 작업 모두에서 성능 개선 확인
-  #         - 단순한 튜닝을 넘어서, InnoDB의 Redo/Undo/Change Buffer, FK 무결성 검사, Buffer Pool 메커니즘까지 고려한 **아키텍처적 개선 경험**
-          
-  #         <br>이 경험을 통해 **성능 문제는 단일 포인트가 아닌 InnoDB 내부 구조의 상호작용**에 의해 발생한다는 점을 체감했습니다. 따라서 고성능을 위한 설계는 단일 요소 튜닝이 아닌, **전체 구조와 메커니즘을 통합적으로 고려하는 설계 전략**이 필수적임을 학습했습니다.
-
-# - title: Education # Title for the section
-  #   layout: list # Type of content section (list/text)
-  #   content:
-  #     - layout: left
-  #       title: f-lab
-  #       caption: 2024.11 - 2025.04
-  #       sub_title: Node.js 백엔드 개발
-  #       quote: >
-  #         팀 리드하기 위해 더욱 많은 학습을 하기 위해 참여한 f-lab의 Node.js 백엔드 개발 과정입니다.
-  #       description: | # this will include new lines to allow paragraphs
-  #         - Node.js, Express, NestJS, TypeScript를 활용한 백엔드 개발
-  #         - RESTful API 설계 및 구현
-  #         - 성능 최적화
-  #         - 비동기 프로그래밍 및 이벤트 기반 아키텍처 이해
 
 # Footer
 footer_show_references: true
