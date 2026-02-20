@@ -83,6 +83,7 @@ content:
           - PostgreSQL MVCC 분석을 통한 [**Autovacuum 장애 해결 및 테이블 비대화(75%) 개선**](https://jaemoon.tistory.com/389)
           - 180만 건의 GeoIP 데이터 DB 의존성을 제거 [**CloudFront Edge 인프라로 전면 위임**](https://jaemoon.tistory.com/390)하여 유지보수 비용 제로화
           - Redis-DB 동기화 배치 구조 개선으로 [**CPU 스파이크 평탄화 및 인프라 비용 45% 절감**](https://jaemoon.tistory.com/387)
+          - 2025년 하반기 **우수사원**
 
       - layout: left
         title: Codeline
