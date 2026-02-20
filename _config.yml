@@ -106,23 +106,23 @@ content:
         caption: 2025.7 - present
         sub_title: 백엔드 개발/운영/최적화
         description: |
-          1. EKS 환경 WebSocket 서버 도입 및 안정화**
+          **EKS 환경 WebSocket 서버 도입 및 안정화**
           - 커널 파라미터(FD, TCP) 최적화 
           - 활성 연결 수 기반 Custom Metric HPA를 구축
           
-          2. **CloudFront Edge 도입을 통한 DB 부하 원천 차단**
+          **CloudFront Edge 도입을 통한 DB 부하 원천 차단**
           - 매일 180만 건의 데이터 갱신 작업(Hard Delete/Insert)을 CloudFront 기반의 위치 판별 방식으로 전환
           - DB I/O 0건으로 ACU 스파이크 제거
           
-          3. **PostgreSQL MVCC 최적화 및 인프라 리소스 효율화**
+          **PostgreSQL MVCC 최적화 및 인프라 리소스 효율화**
           - 장기 트랜잭션 분석을 통한 **테이블 비대화(Bloat) 75% 감량** 및 Visibility Blocker 제거
           - 9단계 JOIN 쿼리를 CTE 기반 지연 로딩으로 개선하여 **메모리 점유율 및 ACU 사용량 83% 절감**
           
-          4. **배치 파이프라인 설계 (비용 45% 절감)**
+          **배치 파이프라인 설계 (비용 45% 절감)**
           - 업데이트 구문을 VALUES 절 가상 테이블 조인으로 리팩토링하여 쿼리 파싱 오버헤드 최적화
           - Node.js 이벤트 루프 Yielding 기법을 적용
           
-          5. 트레이딩 리워드 개발 및 정산 로직 개발
+          트레이딩 리워드 개발 및 정산 로직 개발
 
       - layout: left
         title: 충남도청 시스템
