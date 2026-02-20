@@ -78,8 +78,11 @@ content:
         caption: 07.2025 - present
         description: | # this will include new lines to allow paragraphs
           - 리워드 시스템 개발
-          - [**ACU(Aurora Capacity Unit) 24에서 4로 약 84% 감소**](https://jaemoon.tistory.com/383)
-          - [**EKS 환경 Socket Server Architecture 설계**](https://jaemoon.tistory.com/384)
+          - **EKS 기반 대규모 실시간 소켓 아키텍처 설계** 및 [**트래픽 선제 대응**](https://jaemoon.tistory.com/391)
+          - 쿼리 최적화로 [**Aurora DB ACU 비용 84% 절감 (24→4)**](https://jaemoon.tistory.com/383)
+          - **데이터 오프로딩 아키텍처 전환:** 180만 건의 GeoIP 데이터 DB 의존성을 제거하고 [**CloudFront Edge 인프라로 전면 위임**](https://jaemoon.tistory.com/390)하여 유지보수 비용 제로화
+          - PostgreSQL MVCC 분석을 통한 [**Autovacuum 장애 해결 및 테이블 비대화(75%) 개선**](https://jaemoon.tistory.com/389)
+          - Redis-DB 동기화 배치 구조 개선으로 [**CPU 스파이크 평탄화 및 인프라 비용 45% 절감**](https://jaemoon.tistory.com/387)
 
       - layout: left
         title: Codeline
@@ -99,13 +102,32 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: Web3 social network service
+        caption: 2025.7 - present
+        sub_title: 백엔드 개발/운영/최적화
+        description: |
+          - **EKS 환경 WebSocket 서버(Centrifugo) 안정화**
+            - 커널 파라미터(FD, TCP) 최적화 
+            - 활성 연결 수 기반 Custom Metric HPA를 구축
+          - **CloudFront Edge 도입을 통한 DB 부하 원천 차단**
+            - 매일 180만 건의 데이터 갱신 작업(Hard Delete/Insert)을 CloudFront Header 기반의 위치 판별 방식으로 전환
+            - DB I/O를 0건으로 ACU 스파이크 제거
+          - **PostgreSQL MVCC 최적화 및 인프라 리소스 효율화**
+            - 장기 트랜잭션 분석을 통한 Visibility Blocker 제거 및 테이블 비대화(Bloat) 75% 감량
+            - 9단계 JOIN 쿼리를 CTE 기반 지연 로딩으로 개선하여 메모리 점유율 및 ACU 사용량 83% 절감
+          - **고효율 배치 파이프라인 설계 (비용 45% 절감)**
+            - 업데이트 구문을 VALUES 절 가상 테이블 조인으로 리팩토링하여 쿼리 파싱 오버헤드 최적화
+            - Node.js 이벤트 루프 Yielding 기법을 적용하여 배치 작업 중 시스템 응답성(Responsiveness) 사수
+          - 트레이딩 리워드 개발 및 정산 로직 개발
+
+      - layout: left
         title: 충남도청 시스템
-        caption: 2024.12 ~ 2025.05
+        caption: 2024.12 - 2025.05
         sub_title: 백엔드 리팩토링 주도 및 아키텍처 설계 | 팀장(개발자 5인 리드)
         link: https://jaemoon.tistory.com/316
         description: |
 
-          - Nest 마이그레이션 진행중
+          - Nest.js 마이그레이션
           - Inversify DI/IoC 도입으로 의존성 제거, 유지보수성과 기능 개발 속도 **70% 개선**
           - Redis + BullMQ 기반 로그 큐 시스템 구축, 장애 상황에서도 **99.9% 로그 영속성 보장**
           - RESTful API 전면 재설계 일관성과 확장성 확보
@@ -114,7 +136,7 @@ content:
 
       - layout: left
         title: 아이나래 시스템 고도화
-        caption: 2024.06 ~ 2024.12
+        caption: 2024.06 - 2024.12
         sub_title: 백엔드 리팩토링 주도 및 고도화
         link: https://www.khan.co.kr/article/202407011100011
         description: |
@@ -162,10 +184,6 @@ content:
           - TypeORM, Prisma, MySQL, Postgres
           - Redis(BullMQ, Pub/Sub, Cache, Pipeline)
           - Testing(k6, Jest)
-      - layout: left
-        title: Frontend
-        description: | # this will include new lines to allow paragraphs
-          - jQuery, HTML, CSS
 
 # Footer
 footer_show_references: true
